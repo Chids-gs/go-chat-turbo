@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Go-Chat-Turbo</title>
+  <meta name="description" content="Go-Chat-Turbo is a chatbot that uses Gemini
+   to generate responses.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.3.0/dist/turbo.es2017-umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body>
+<header class="app-header">
+  <h1>Go-Chat-Turbo</h1>
+</header>
+<div class="top-right-buttons">
+  <img src="/static/images/login.png" alt="Login" onclick="alert('Login clicked')"/>
+  <img src="/static/images/sign-up.png" alt="Sign Up" onclick="alert('Sign Up clicked')"/>
+</div>
+<div class="container">
+  <div class="left-panel">
+    <h3>Model Parameters</h3>
+    <label>Temperature</label>
+    <input type="range" min="0" max="1" step="0.1" id="temperatureSlider">
+    <label>Max Tokens</label>
+    <input type="range" min="100" max="2000" step="100" id="maxTokensSlider">
+    <label>Top-P</label>
+    <input type="range" min="0" max="1" step="0.1" id="topPSlider">
+    <label>Frequency Penalty</label>
+    <input type="range" min="0" max="2" step="0.1" id="frequencyPenaltySlider">
+  </div>
+
+  <div class="chat-area">
+    <div id="box" class="chat-box"></div>
+
+    <div id="input-section">
+      <input id="line" type="text" placeholder="Please enter your message..." onkeypress="handleKeyPress(event)"/>
+      <button onclick="onSend()">
+        <img src="/static/images/send.png" alt="Send" style="width:24px; height:24px;"/>
+      </button>
+    </div>
+    <div id="processing-spinner" style="display:none;">
+      <img src="/static/images/processing.webp" alt="Processing..." />
+    </div>
+  </div>
+</div>
+<script src="/static/js/chat.js"></script>
+</body>
+</html>
