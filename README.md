@@ -70,7 +70,7 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 
 1. Clone the repository
 ```bash
-git clone [https://github.com/chids-gs/go-chat-turb.git]
+git clone https://github.com/chids-gs/go-chat-turbo.git
 ```
 
 2. Configure environment
